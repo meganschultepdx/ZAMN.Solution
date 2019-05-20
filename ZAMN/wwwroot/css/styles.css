@@ -1,0 +1,165 @@
+body {
+  color: white;
+  margin-top: 3vh;
+}
+
+h1, h2, h3 {
+  font-family: 'Roboto', sans-serif;
+}
+
+h4, h5, p {
+  font-family: 'Raleway', sans-serif;
+}
+
+a, a:hover {
+  color: white;
+}
+
+h1 {
+  font-size: 50px;
+  text-shadow: 0.2px 0.2px black;
+  color: #F6AA1C;
+}
+
+h2 {
+  font-size: 50px;
+  text-shadow: 1px 1px black;
+  color: #F6AA1C;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  display: inline-block;
+}
+
+.menu li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 8px 16px;
+  text decoration: none;
+  background-color: none;
+  /* margin-left: 1vw;
+  margin-right: 1vw; */
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  text-shadow: 0.2px 0.2px white;
+}
+
+.menu li a:hover {
+  color: #FFE066;
+  text-decoration: none;
+}
+
+input, button, select, textarea {
+  color: black;
+}
+
+button {
+  color: black;
+}
+
+.gridHeader {
+  margin-bottom: 1vh;
+  display: grid;
+  grid-column-gap: 2%;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  width: 100vw;
+}
+
+.header {
+  /* background: grey; */
+  padding-bottom: 5vh;
+  grid-column: 1/4;
+  grid-row: 1/2;
+  text-align: left;
+  margin-bottom: 2vh;
+  padding-top: 2vh;
+}
+
+.heading {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.grid {
+  margin: 0 10vw 1vh 10vw;
+  display: grid;
+  grid-column-gap: 2%;
+  grid-row-gap: 7%;
+  grid-template-columns: repeat(3, 2fr);
+  justify-items: center;
+  border-radius: 5px;
+}
+
+.gridBox {
+
+  /* border: 2px solid white; */
+  border-radius: 10%;
+  background-color: #fffbfc;
+  height: 35vh;
+  width: 35vh;
+}
+
+.footer {
+  /* background: grey;
+  padding: 2em; */
+  margin-top: 6vh;
+  grid-column: 1/4;
+  text-align: center;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  width: 80vw;
+}
+
+.gridBox > img {
+  padding: 2%;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10%;
+}
+
+.pickUpFinder {
+  margin-top: 3vh;
+  padding: 2em;
+  grid-column: 1/4;
+  grid-row: 2/3;
+  background: #grey;
+  border-radius: 10px;
+  /* border: 2px solid white; */
+  text-align: center;
+  width: 80vw;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+}
+/*
+figure:hover figcaption {
+  opacity: 1;
+  height: 100%;
+  width: 100%;
+  display: block;
+} */
+
+/* figure:hover img {
+  opacity: 1;
+  display: none;
+} */
+/*
+figcaption {
+  height: 100%;
+  width: 100%;
+  display: none;
+} */
+
+figcaption > p {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
