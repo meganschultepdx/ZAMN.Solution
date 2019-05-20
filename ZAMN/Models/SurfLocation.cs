@@ -9,7 +9,7 @@ namespace ZAMN.Models
     private string _name;
     private string _comment;
 
-    public ShortSands(string name, string comment, int id = 0)
+    public SurfLocation(string name, string comment, int id = 0)
     {
       _name = name;
       _comment = comment;
