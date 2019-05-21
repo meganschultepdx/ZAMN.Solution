@@ -41,7 +41,7 @@ namespace ZAMN.Models
       conn.Open();
 
       MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"SELECT id, name, address, foodtype FROM restaurants;";
+      cmd.CommandText = @"SELECT id, name, address, type FROM restaurants;";
       MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
       while(rdr.Read())
       {

@@ -1,6 +1,7 @@
 body {
-  color: white;
+  color: #50514F;
   margin-top: 3vh;
+  background-color: #FFFCF9;
 }
 
 h1, h2, h3 {
@@ -12,7 +13,7 @@ h4, h5, p {
 }
 
 a, a:hover {
-  color: white;
+  color: #50514F;
 }
 
 h1 {
@@ -20,10 +21,9 @@ h1 {
   text-shadow: 0.2px 0.2px black;
   color: #F6AA1C;
 }
-
-h2 {
-  font-size: 50px;
-  text-shadow: 1px 1px black;
+h3 {
+  font-size: 22px;
+  text-shadow: 0.1px 0.1px #F6AA1C;
   color: #F6AA1C;
 }
 
@@ -106,6 +106,25 @@ button {
   width: 35vh;
 }
 
+
+.gridRest {
+  /* margin: 0 10vw 1vh 10vw; */
+  display: grid;
+  grid-column-gap: 2%;
+  grid-row-gap: 7%;
+  grid-template-columns: repeat(3, 2fr);
+  /* justify-items: center; */
+  border-radius: 5px;
+}
+
+.gridBoxRest {
+
+  /* border: 2px solid white; */
+  border-radius: 5%;
+  height: 45vh;
+  width: 45vh;
+}
+
 .footer {
   /* background: grey;
   padding: 2em; */
@@ -123,6 +142,15 @@ button {
   width: 100%;
   object-fit: cover;
   border-radius: 10%;
+}
+
+.gridBoxRest > img {
+  padding-bottom: 2%;
+  padding-top: 2%;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5%;
 }
 
 .pickUpFinder {
@@ -281,4 +309,16 @@ figcaption > p {
  -webkit-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
  -moz-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
  box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+}
+
+.restaurants {
+
+}
+
+.footerRest {
+  margin-top: 80vh;
+  grid-column: 1/4;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  width: 80vw;
 }

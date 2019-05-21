@@ -1,0 +1,20 @@
+@{
+  Layout = "_Layout";
+}
+
+<div class=container>
+  <h2>Add a restaurant</h2>
+  <hr>
+
+  <form action="/restaurants" method="post">
+    <label for="name">Name</label>
+    <input id="name" name="name" type="text">
+    <label for="address">Address</label>
+    <input id="address" name="address" type="text">
+    <label for="type">Type of food</label>
+    <input id="type" name="type" type="text">
+    <button type="submit">Add</button>
+  </form>
+  <br>
+  <p><a href="/restaurants">Back to restaurants</a></p>
+</div>
