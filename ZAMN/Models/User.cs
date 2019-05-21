@@ -128,7 +128,7 @@ namespace ZAMN.Models
         string locationName = rdr.GetString(1);
         string locationComment = rdr.GetString(2);
 
-        SurfLocation newSurfLocation= new SurfLocation(locationName, locationId);
+        SurfLocation newSurfLocation= new SurfLocation(locationName, locationComment, locationId);
         allSurfLocations.Add(newSurfLocation);
       }
       conn.Close();

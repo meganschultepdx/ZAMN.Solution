@@ -165,17 +165,28 @@ figcaption > p {
 }
 
 /* START location styling */
+#surfBackground {
+  background: url(../img/surfBeach.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
 
 #container {
  width: 1000px;
  overflow: hidden;
  margin: 50px auto;
- /* background: black; */
+ background: #434647;
+ /* opacity: .8; */
 }
 
 #galleryTitle {
  text-align: center;
- font: 100 24px/1.5 Helvetica, Verdana, sans-serif;
+ font: 100 40px/1.5 Helvetica, Verdana, sans-serif;
+ color: grey;
+ }
+
+ #staticMap {
+   margin-left: 40px;
  }
 
 /*photobanner*/
@@ -188,11 +199,11 @@ figcaption > p {
 
 /*keyframe animations*/
 .first {
- -webkit-animation: bannermove 100s linear infinite;
-    -moz-animation: bannermove 100s linear infinite;
-     -ms-animation: bannermove 100s linear infinite;
-      -o-animation: bannermove 100s linear infinite;
-         animation: bannermove 100s linear infinite;
+ -webkit-animation: bannermove 70s linear infinite;
+    -moz-animation: bannermove 70s linear infinite;
+     -ms-animation: bannermove 70s linear infinite;
+      -o-animation: bannermove 70s linear infinite;
+         animation: bannermove 70s linear infinite;
 }
 
 @keyframes "bannermove" {
