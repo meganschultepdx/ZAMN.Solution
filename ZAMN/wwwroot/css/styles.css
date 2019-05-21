@@ -188,11 +188,11 @@ figcaption > p {
 
 /*keyframe animations*/
 .first {
- -webkit-animation: bannermove 100s linear infinite;
-    -moz-animation: bannermove 100s linear infinite;
-     -ms-animation: bannermove 100s linear infinite;
-      -o-animation: bannermove 100s linear infinite;
-         animation: bannermove 100s linear infinite;
+ -webkit-animation: bannermove 70s linear infinite;
+    -moz-animation: bannermove 70s linear infinite;
+     -ms-animation: bannermove 70s linear infinite;
+      -o-animation: bannermove 70s linear infinite;
+         animation: bannermove 70s linear infinite;
 }
 
 @keyframes "bannermove" {
