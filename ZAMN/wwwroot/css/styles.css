@@ -1,6 +1,6 @@
 body {
   color: #50514F;
-  margin-top: 3vh;
+  margin-top: 10vh;
   background-color: #FFFCF9;
 }
 
@@ -39,20 +39,20 @@ h3 {
 
 .menu li a {
   display: block;
-  color: white;
+  color: #50514F;
   text-align: center;
   padding: 8px 16px;
   text decoration: none;
   background-color: none;
-  /* margin-left: 1vw;
-  margin-right: 1vw; */
+  margin-left: 1vw;
+  margin-right: 1vw;
   font-family: 'Raleway', sans-serif;
   font-size: 20px;
   text-shadow: 0.2px 0.2px white;
 }
 
 .menu li a:hover {
-  color: #FFE066;
+  color: #F6AA1C;
   text-decoration: none;
 }
 
@@ -62,6 +62,11 @@ input, button, select, textarea {
 
 button {
   color: black;
+}
+
+.restaurants button {
+  margin-bottom: 5%;
+
 }
 
 .gridHeader {
@@ -105,7 +110,6 @@ button {
   height: 35vh;
   width: 35vh;
 }
-
 
 .gridRest {
   /* margin: 0 10vw 1vh 10vw; */
@@ -316,9 +320,28 @@ figcaption > p {
 }
 
 .footerRest {
-  margin-top: 80vh;
+  margin-top: 70vh;
   grid-column: 1/4;
-  border-radius: 10px;
   font-family: 'Montserrat', sans-serif;
   width: 80vw;
+}
+
+.addnewrest input[type=text], select {
+  width: 200%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.addnewrest TEXTAREA[type=text], select {
+  width: 200%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }

@@ -10,13 +10,15 @@ namespace ZAMN.Models
     public string _restaurantName { get; set; }
     public string _restaurantAddress { get; set; }
     public string _restaurantType { get; set; }
+    public string _restaurantDescription { get; set; }
 
-    public Restaurant (string restaurantName, string restaurantAddress, string restaurantType)
+    public Restaurant (string restaurantName, string restaurantAddress, string restaurantType, string restaurantDescription)
     {
       // _restaurantId = restaurantId;
       _restaurantName = restaurantName;
       _restaurantAddress = restaurantAddress;
       _restaurantType = restaurantType;
+      _restaurantDescription = restaurantDescription;
     }
 
     public static void ClearAll()
@@ -41,7 +43,7 @@ namespace ZAMN.Models
       conn.Open();
 
       MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"SELECT id, name, address, type FROM restaurants;";
+      cmd.CommandText = @"SELECT id, name, address, type, description FROM restaurants;";
       MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
       while(rdr.Read())
       {
@@ -52,7 +54,8 @@ namespace ZAMN.Models
         Restaurant newRestaurant = new Restaurant(
           rdr.GetString(1),
           rdr.GetString(2),
-          rdr.GetString(3)
+          rdr.GetString(3),
+          rdr.GetString(4)
         );
         newRestaurant._restaurantId = rdr.GetInt32(0);
         allRestaurants.Add(newRestaurant);
@@ -87,10 +90,11 @@ namespace ZAMN.Models
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
 
-      cmd.CommandText = @"INSERT INTO restaurants (name, address, type) VALUES (@name, @address, @type);";
+      cmd.CommandText = @"INSERT INTO restaurants (name, address, type, description) VALUES (@name, @address, @type, @description);";
       cmd.Parameters.AddWithValue("@name", _restaurantName);
       cmd.Parameters.AddWithValue("@address", _restaurantAddress);
       cmd.Parameters.AddWithValue("@type", _restaurantType);
+      cmd.Parameters.AddWithValue("@description", _restaurantDescription);
       cmd.ExecuteNonQuery();
       _restaurantId = (int) cmd.LastInsertedId;
 
@@ -121,6 +125,7 @@ namespace ZAMN.Models
       string restaurantName = "";
       string restaurantAddress = "";
       string restaurantType = "";
+      string restaurantDescription = "";
 
       while(rdr.Read())
       {
@@ -128,9 +133,10 @@ namespace ZAMN.Models
         restaurantName = rdr.GetString(1);
         restaurantAddress = rdr.GetString(2);
         restaurantType = rdr.GetString(3);
+        restaurantDescription = rdr.GetString(4);
       }
 
-      Restaurant newRestaurant = new Restaurant(restaurantName, restaurantAddress, restaurantType);
+      Restaurant newRestaurant = new Restaurant(restaurantName, restaurantAddress, restaurantType, restaurantDescription);
       newRestaurant._restaurantId = restaurantId;
 
       conn.Close();
@@ -206,22 +212,22 @@ namespace ZAMN.Models
     //   return users;
     // }
 
-    public void Delete()
-    {
-      MySqlConnection conn = DB.Connection();
-      conn.Open();
-
-      var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"DELETE FROM restaurants WHERE id = @RestaurantId; DELETE FROM services WHERE restaurants_id = @RestaurantId;";
-      MySqlParameter restaurantIdParameter = new MySqlParameter();
-      restaurantIdParameter.ParameterName = "@RestaurantId";
-      restaurantIdParameter.Value = this._restaurantId;
-      cmd.Parameters.Add(restaurantIdParameter);
-      cmd.ExecuteNonQuery();
-      if (conn != null)
-      {
-        conn.Close();
-      }
-    }
+    // public void Delete()
+    // {
+    //   MySqlConnection conn = DB.Connection();
+    //   conn.Open();
+    //
+    //   var cmd = conn.CreateCommand() as MySqlCommand;
+    //   cmd.CommandText = @"DELETE FROM restaurants WHERE id = @RestaurantId; DELETE FROM services WHERE restaurants_id = @RestaurantId;";
+    //   MySqlParameter restaurantIdParameter = new MySqlParameter();
+    //   restaurantIdParameter.ParameterName = "@RestaurantId";
+    //   restaurantIdParameter.Value = this._restaurantId;
+    //   cmd.Parameters.Add(restaurantIdParameter);
+    //   cmd.ExecuteNonQuery();
+    //   if (conn != null)
+    //   {
+    //     conn.Close();
+    //   }
+    // }
   }
 }

@@ -2,14 +2,27 @@
     Layout = "_Layout";
 }
 
-<div class=container>
+<div class="gridHeader">
+  <div class="header">
+    <ul class="menu">
+      <li>
+        <form class="form-inline" action="/action_page.php">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-success" type="submit">SEARCH</button>
+        </form>
+      </li>
+      <li><a href='/'>HOME</a></li>
+      <li><a href='/DIRECTIONS'>DIRECTIONS</a></li>
+      <li><a href='/restaurants'>FOOD</a></li>
+      <li><a href='/login'>LOGIN</a></li>
+    </ul>
+  </div>
+</div>
+<div class="grid">
+
+<div class="container">
   <h2>Where to eat and drink before and after surfing</h2>
   <hr>
-<!--
-  @if (@Model.Count == 0)
-  {
-    <h3>No restaurants have been added yet!</h3>
-  } -->
 
   <div class="restaurants">
     <div class="gridRest">
@@ -36,19 +49,28 @@
         <img src="../img/IndianToms.png" alt="map from beach to restaurant" width="600px">
         <p>$ | American, Seafood</p>
         <p>Tom's restaurant located on the corner of Holladay and Broadway in Seaside. Serving affordable fish & chips, fish tacos, salads, chowder, classic burgers and excellent beer. The food here is simple, tasty and fairly priced. Great craft beer on tap and a fun and friendly atmosphere!</p>
-      </figure>
+      </figure
+      <hr>
       <div class= "footerRest">
+        <h5>See what others are recommending or add a new restaurant:</h5>
+        <br>
+        <button><a href='/restaurants/new'>Add a new restaurant</a></button>
+        <br>
+
+        @if (@Model.Count == 0)
+        {
+          <h3>No restaurants have been added yet!</h3>
+        }
         @foreach (var restaurant in Model)
         {
-          <h3><a href="/restaurants/@restaurant._restaurantId">@restaurant._restaurantName</a>
-          <p>@restaurant._restaurantAddress</p>
-          <p>@restaurant._restaurantType</p>
-          </h3>
+          <h3>@restaurant._restaurantName</h3>
+          <p>@restaurant._restaurantAddress
+          || @restaurant._restaurantType</p>
+          <p>@restaurant._restaurantDescription</p>
+          <hr>
         }
 
         <br>
-        <p><a href='/restaurants/new'>Add a new restaurant</a></p>
-        <p><a href='/restaurants/delete'>Delete all restaurants</a></p>
       </div>
     </div>
   </div>
