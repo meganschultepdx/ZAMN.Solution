@@ -22,111 +22,56 @@
     <img src="../img/shortSands/shortSands10.jpg" alt="Short Sands Beach" height="225px" />
     <img src="../img/shortSands/shortSands1.jpg" alt="Short Sands Beach" height="225px" />
     <img src="../img/shortSands/shortSands6.jpg" alt="Short Sands Beach" height="225px" />
+    <img src="../img/shortSands/shortSands5.jpg" alt="Short Sands Beach" height="225px" />
   </div>
 
-<div class="container"
+<!-- weather -->
+  <div class="container"
   <header id="weather">[ ShortSands] <a class="weatherwidget-io" href="https://forecast7.com/en/45d72n123d89/nehalem/?unit=us" data-label_1="NEHALEM" data-label_2="WEATHER" data-theme="original" >NEHALEM WEATHER</a>
     <script>
       !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
     </script>
   </header>
+</div>
+
+<!-- widgets -->
+<div class="container">
+  <div id="locationGrid" class="grid">
+
+    <figure id="swell" class="locationGridBox">
+      <!-- <figcaption1>
+        <p>SWELL GRAPH</p>
+      </figcaption1> -->
+      <div style="width:100px;background:#fff"><script type="text/javascript" src="http://magicseaweed.com/syndicate/index.php?licenseKey=1558480820_74327"></script><p><div style="font-family:Arial, Helvetica, sans-serif;text-align:center;font-size:10px;color:#000;height:25px;"><a href="http://magicseaweed.com/Oregon-Surf-Forecast/15/" style="color:#000;"></a></div></p></div>
+    </figure>
+
+    <figure id="swell" class="locationGridBox">
+      <div style="width:100px;background:#fff"><script type="text/javascript" src="http://magicseaweed.com/syndicate/index.php?licenseKey=1558481015_14013"></script><p><div style="font-family:Arial, Helvetica, sans-serif;text-align:center;font-size:10px;color:#000;height:25px;"><a href="http://magicseaweed.com/Smugglers-Cove-Surf-Report/314/" style="color:#000;"></a></div></p></div>
+    </figure>
+
+    <figure id="tides" class="locationGridBox">
+      <script src="//tides.tidegraph.com/api/tidegraph.php?bg=white&scale=0.75&color=black&lat=45.7698&lng=-123.9591"></script>
+    </figure>
   </div>
+</div>
 
-  <!-- <div id="widgets" class="container">
-      <main class="swell">
-        @* Both map and forecast *@
-        <div style="width:400px;background:#fff"><script type="text/javascript" src="http://magicseaweed.com/syndicate/index.php?licenseKey=1558453384_91825"></script><p><div style="font-family:Arial, Helvetica, sans-serif;text-align:center;font-size:10px;color:#000;height:25px;"><a href="http://magicseaweed.com/Smugglers-Cove-Surf-Report/314/" style="color:#000;">S</a></div></p></div>
-      </main>
-      <aside class="tides">
-        <script src="//tides.tidegraph.com/api/tidegraph.php?bg=white&scale=0.75&color=black&lat=45.7698&lng=-123.9591"></script>
-      </aside>
-      <footer>
-        <p>Are you at Short Sands right now? Let others know about the conditions!</p>
-      </footer>
-      <footer2>
-        ####comments
-      </footer2>
-    </div> -->
+<div class="container">
+  <div id="commentGrid" class="grid">
 
-    <div class="container">
-     <div id="locationGrid" class="grid">
+    <figure id="linkToForm" class="locationGridBox3">
+      <figcaption1>
+        <p>ARE YOU AT SHORT SANDS RIGHT NOW? ADD YOUR OWN WEATHER/WAVE OBSERVATIONS!</p>
+      </figcaption1>
+      <a href="####link to new form###"></a>
+    </figure>
 
-          <figure id="swell" class="locationGridBox">
-            <figcaption1>
-              <p>SWELL REPORT</p>
-            </figcaption1>
-              @* Both map and forecast *@
-            <div style="width:100px;background:#fff">
-              <script type="text/javascript" src="http://magicseaweed.com/syndicate/index.php?licenseKey=1558453384_91825">
-              </script>
-              <p>
-                <div style="font-family:Arial, Helvetica, sans-serif;text-align:center;font-size:10px;color:#000;height:25px;"><a href="http://magicseaweed.com/Smugglers-Cove-Surf-Report/314/" style="color:#000;"></a>
-                </div>
-              </p>
-            </div>
-          </figure>
-
-          <figure id="tides" class="locationGridBox">
-            <figcaption1>
-              <p>TIDE TABLE</p>
-            </figcaption1>
-            <script src="//tides.tidegraph.com/api/tidegraph.php?bg=white&scale=0.75&color=black&lat=45.7698&lng=-123.9591"></script>
-          </figure>
-        </div>
-      </div>
-
-        <!-- <a href="map/map.html">
-          <figure class="map gridBox">
-            <img src="../img/sunset.jpg" alt="image of recycling bin">
-            <figcaption>
-              <p>Canon Beach</p>
-            </figcaption>
-          </figure>
-        </a>
-        <a href="map/map.html">
-          <figure class="map gridBox">
-            <img src="../img/sunset.jpg" alt="image of recycling bin">
-            <figcaption>
-              <p>Cascade Head</p>
-            </figcaption>
-          </figure>
-        </a> -->
-
-
-        <!-- <div class="grid">
-          <a href="guide.html">
-            <figcaption>
-            </figcaption>
-            <figure class="guide gridBox">
-              <p>Are you at Short Sands? Tell us what the waves and weather are like right now!</p>
-              <form id="userComment" action="/userComment" method="post">
-
-                <label for="userName">Your Name</label>
-                <input id="userName" name="userName" type="text">
-
-                <label for="comment">Current conditions</label>
-                <input id="comment" name="comment" type="text">
-
-                <button type="submit">Add</button>
-              </form>
-            </figure>
-          </a>
-          <a href="quiz2.html">
-            <figure class="quiz gridBox">
-              @* Both map and forecast *@
-              <div style="width:400px;background:#fff"><script type="text/javascript" src="http://magicseaweed.com/syndicate/index.php?licenseKey=1558453384_91825"></script><p><div style="font-family:Arial, Helvetica, sans-serif;text-align:center;font-size:10px;color:#000;height:25px;"><a href="http://magicseaweed.com/Smugglers-Cove-Surf-Report/314/" style="color:#000;">S</a></div></p></div>
-              <figcaption>
-                <p>Swell Report and Forecast</p>
-              </figcaption>
-            </figure>
-          </a>
-
-
-
-      </div>
-
-    </div>
-  </div> -->
-
+    <figure id="commentsDisplay" class="locationGridBox3">
+      <figcaption1>
+        <p>Are you at Short Sands; add your own wave and weather observations!</p>
+      </figcaption1>
+      <a href="####link to new form###"></a>
+    </figure>
+  </div>
+</div>
 
 </body>
