@@ -109,35 +109,35 @@ namespace ZAMN.Models
       }
     }
 
-    // public List<SurfLocation> GetSurfLocation()
-    // {
-    //   List<SurfLocation> allSurfLocations = new List<SurfLocation>{};
-    //   MySqlConnection conn = DB.Connection();
-    //   conn.Open();
-    //   var cmd = conn.CreateCommand() as MySqlCommand;
-    //   cmd.CommandText = "SELECT * FROM locations JOIN users_locations ON (users_locations.location_id = locations.id) JOIN users ON (users.id = users_locations.user_id) WHERE users.id = @user_id;";
-    //
-    //   MySqlParameter searchId = new MySqlParameter();
-    //   searchId.ParameterName = "@user_id";
-    //   searchId.Value = this._id;
-    //   cmd.Parameters.Add(searchId);
-    //   var rdr = cmd.ExecuteReader() as MySqlDataReader;
-    //   while(rdr.Read())
-    //   {
-    //     int locationId = rdr.GetInt32(0);
-    //     string locationName = rdr.GetString(1);
-    //     string locationComment = rdr.GetString(2);
-    //
-    //     SurfLocation newSurfLocation= new SurfLocation(locationName, locationId);
-    //     allSurfLocations.Add(newSurfLocation);
-    //   }
-    //   conn.Close();
-    //   if (conn != null)
-    //   {
-    //     conn.Dispose();
-    //   }
-    //   return allSurfLocations;
-    // }
+    public List<SurfLocation> GetSurfLocation()
+    {
+      List<SurfLocation> allSurfLocations = new List<SurfLocation>{};
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = "SELECT * FROM locations JOIN users_locations ON (users_locations.location_id = locations.id) JOIN users ON (users.id = users_locations.user_id) WHERE users.id = @user_id;";
+
+      MySqlParameter searchId = new MySqlParameter();
+      searchId.ParameterName = "@user_id";
+      searchId.Value = this._id;
+      cmd.Parameters.Add(searchId);
+      var rdr = cmd.ExecuteReader() as MySqlDataReader;
+      while(rdr.Read())
+      {
+        int locationId = rdr.GetInt32(0);
+        string locationName = rdr.GetString(1);
+        string locationComment = rdr.GetString(2);
+
+        SurfLocation newSurfLocation= new SurfLocation(locationName, locationComment, locationId);
+        allSurfLocations.Add(newSurfLocation);
+      }
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+      return allSurfLocations;
+    }
 
     public void AddSurfLocation (SurfLocation newSurfLocation)
     {

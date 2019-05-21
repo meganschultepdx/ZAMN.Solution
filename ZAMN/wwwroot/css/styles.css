@@ -176,6 +176,7 @@ figcaption > p {
  overflow: hidden;
  margin: 50px auto;
  background: #434647;
+ /* opacity: .8; */
 }
 
 #galleryTitle {
