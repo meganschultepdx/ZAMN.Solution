@@ -6,14 +6,14 @@ using System;
 
 namespace ZAMN.Models
 {
-  public class ShortSands
+  public class CapeKiwanda
   {
     private int _id;
     private string _name;
     private string _comment;
     private DateTime _timePost;
 
-    public ShortSands (string name, string comment, DateTime timePost, int id = 0)
+    public CapeKiwanda (string name, string comment, DateTime timePost, int id = 0)
     {
       _name = name;
       _comment = comment;
@@ -30,13 +30,13 @@ namespace ZAMN.Models
       return _id;
     }
 
-    public static List<ShortSands> GetAll()
+    public static List<CapeKiwanda> GetAll()
     {
-      List<ShortSands> allPosts = new List<ShortSands>{};
+      List<CapeKiwanda> allPosts = new List<CapeKiwanda>{};
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"SELECT * FROM shortsands;";
+      cmd.CommandText = @"SELECT * FROM capekiwanda;";
       var rdr = cmd.ExecuteReader() as MySqlDataReader;
       while(rdr.Read())
       {
@@ -45,7 +45,7 @@ namespace ZAMN.Models
         string userComment = rdr.GetString(2);
         DateTime timeStamp = rdr.GetDateTime(3);
 
-        ShortSands newPost = new ShortSands(userName, userComment, timeStamp, id);
+        CapeKiwanda newPost = new CapeKiwanda(userName, userComment, timeStamp, id);
         allPosts.Add(newPost);
       }
       conn.Close();
@@ -56,12 +56,12 @@ namespace ZAMN.Models
       return allPosts;
     }
 
-    public static ShortSands Find(int id)
+    public static CapeKiwanda Find(int id)
     {
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"SELECT * FROM shortsands WHERE id = (@searchId);";
+      cmd.CommandText = @"SELECT * FROM capekiwanda WHERE id = (@searchId);";
       MySqlParameter searchId = new MySqlParameter();
       searchId.ParameterName = "@searchId";
       searchId.Value = id;
@@ -80,7 +80,7 @@ namespace ZAMN.Models
         timeStamp = rdr.GetDateTime(3);
 
       }
-      ShortSands newPost = new ShortSands(userName, userComment, timeStamp);
+      CapeKiwanda newPost = new CapeKiwanda(userName, userComment, timeStamp);
       conn.Close();
       if (conn != null)
       {
@@ -94,7 +94,7 @@ namespace ZAMN.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"INSERT INTO shortsands (userName, comment, time) VALUES (@userName, @comment, @time)";
+      cmd.CommandText = @"INSERT INTO capekiwanda (userName, comment, time) VALUES (@userName, @comment, @time)";
       MySqlParameter userName = new MySqlParameter();
       userName.ParameterName = "@userName";
       userName.Value = this._name;
@@ -124,7 +124,7 @@ namespace ZAMN.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"DELETE FROM shortsands WHERE id = @searchId;";
+      cmd.CommandText = @"DELETE FROM capekiwanda WHERE id = @searchId;";
       MySqlParameter searchId = new MySqlParameter();
       searchId.ParameterName = "@searchId";
       searchId.Value = _id;
@@ -142,7 +142,7 @@ namespace ZAMN.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"UPDATE shortsands SET userName = @newName, comment = @newComment, time = @newTime WHERE id = @searchId;";
+      cmd.CommandText = @"UPDATE capekiwanda SET userName = @newName, comment = @newComment, time = @newTime WHERE id = @searchId;";
 
       MySqlParameter searchId = new MySqlParameter();
       searchId.ParameterName = "@searchId";
@@ -173,15 +173,15 @@ namespace ZAMN.Models
       }
     }
 
-    public override bool Equals(System.Object otherShortSands)
+    public override bool Equals(System.Object otherCapeKiwanda)
     {
-      if (!(otherShortSands is ShortSands))
+      if (!(otherCapeKiwanda is CapeKiwanda))
       {
         return false;
       }
       else
       {
-        ShortSands newPost = (ShortSands) otherShortSands;
+        CapeKiwanda newPost = (CapeKiwanda) otherCapeKiwanda;
         bool idEquality = this.GetId().Equals(newPost.GetId());
         bool nameEquality = this.Name.Equals(newPost.Name);
         bool commentEquality = this.Comment.Equals(newPost.Comment);
@@ -200,7 +200,7 @@ namespace ZAMN.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"DELETE FROM shortsands;";
+      cmd.CommandText = @"DELETE FROM capekiwanda;";
       cmd.ExecuteNonQuery();
       conn.Close();
       if (conn != null)
