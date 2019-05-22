@@ -1,0 +1,20 @@
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Comments";
+}
+<h2>@ViewData["Title"]</h2>
+<hr>
+
+@if (@Model.Count == 0)
+{
+  <h3>No comments have been added yet!</h3>
+}
+
+@foreach (var comment in Model)
+{
+  <h3><a href="/comments/@comment._commentId">@comment._commentDescription</a>
+  </h3>
+}
+
+<br>
+<p><a href='/comments/new'>Add a new comment</a></p>
