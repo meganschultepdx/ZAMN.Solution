@@ -196,46 +196,57 @@ figcaption > p {
   text-decoration: none;
 }
 
+
 /* START location styling */
+
 #surfBackground {
-  background: url(../img/surfBeach.jpg);
-  background-repeat: no-repeat;
-  background-size: 100%;
+  /* background: #222425; */
+  background: white;
+  /* background: url(../img/locationBackground/newDarkWater.jpg); */
+  /* background-repeat: repeat;
+  background-size: 100%; */
 }
 
-#container {
- width: 1000px;
- overflow: hidden;
- margin: 50px auto;
- background: #434647;
+.container {
+ /* width: 1000px; */
+ /* overflow: hidden; */
+ /* margin: 50px auto; */
+ /* background: #222425; */
+ /* background: white; */
  /* opacity: .8; */
 }
 
-#galleryTitle {
+#locationTitle {
  text-align: center;
- font: 100 40px/1.5 Helvetica, Verdana, sans-serif;
- color: grey;
+ font: 50px/1.5 'Montserrat', Verdana, sans-serif;
+ color: #5C6265;
  }
 
- #staticMap {
+
+ #userComment {
+   background-color: black;
+   width: 300px;
+   border-radius: 15px;
    margin-left: 40px;
  }
 
 /*photobanner*/
-
 .photobanner {
- height: 233px;
- width: 3550px;
- margin-bottom: 80px;
+ height: 250px;
+ width: 5000px;
+ margin-bottom: 40px;
+ /* margin-top: 40px; */
+
+ background: white;
 }
 
 /*keyframe animations*/
 .first {
- -webkit-animation: bannermove 70s linear infinite;
-    -moz-animation: bannermove 70s linear infinite;
-     -ms-animation: bannermove 70s linear infinite;
-      -o-animation: bannermove 70s linear infinite;
-         animation: bannermove 70s linear infinite;
+ -webkit-animation: bannermove 150s linear infinite;
+    -moz-animation: bannermove 150s linear infinite;
+     -ms-animation: bannermove 150s linear infinite;
+      -o-animation: bannermove 150s linear infinite;
+         animation: bannermove 150s linear infinite;
 }
 
 @keyframes "bannermove" {
@@ -289,9 +300,12 @@ figcaption > p {
 }
 
 .photobanner {
- height: 233px;
- width: 3550px;
- margin-bottom: 80px;
+  display: flex;
+  align-items: center;
+ height: 250px;
+ width: 5000px;
+ margin-bottom: 20px;
+ margin-top: 20px;
 }
 
 .photobanner img {
@@ -315,6 +329,78 @@ figcaption > p {
  box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
 }
 
+
+#weather {
+  margin-bottom: 30px;
+  margin-left: 16%;
+}
+
+/* beginning location grid styling */
+
+#locationGrid {
+    /* margin: 0 10vw 1vh 10vw; */
+    display: grid;
+    grid-column-gap: 2%;
+    grid-row-gap: 7%;
+    grid-template-columns: repeat(3, 2fr);
+    justify-items: center;
+    /* border-radius: 5px; */
+    height: 1000px;
+}
+
+.locationGridBox {
+  /* border: 2px solid white; */
+  border-radius: 4%;
+  /* background-color: #fffbfc; */
+
+  /* background-color: black; */
+}
+
+#swell {
+  /* margin-right: 20px; */
+  height: 80vh;
+  width: 28vw;
+}
+
+#tides {
+  /* margin-right: 20px; */
+  height: 65vh;
+  width: 18vw;
+}
+/* .locationGridBox2 script  {
+
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8%;
+} */
+
+/* figcaption1 {
+  color: white;
+  text-align: center;
+  background: white;
+  font-size: 20px;
+} */
+
+
+#commentGrid {
+display: grid;
+grid-column-gap: 5%;
+/* grid-row-gap: 7%; */
+grid-template-columns: repeat(1, 4fr);
+justify-items: center;
+/* border-radius: 5px; */
+/* margin-top: 20px; */
+/* background-color: black; */
+}
+
+#linkToForm {
+  height: 11vh;
+  width: 70vw;
+  background-color: #282A2A;
+  text-align: center;
+
+  
 .restaurants {
 
 }
