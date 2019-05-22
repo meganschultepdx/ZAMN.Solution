@@ -14,6 +14,7 @@ h4, h5, p {
 
 a, a:hover {
   color: #50514F;
+  text-decoration: none;
 }
 
 h1 {
@@ -66,7 +67,6 @@ button {
 
 .restaurants button {
   margin-bottom: 5%;
-
 }
 
 .gridHeader {
@@ -99,16 +99,16 @@ button {
   grid-row-gap: 7%;
   grid-template-columns: repeat(3, 2fr);
   justify-items: center;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 
 .gridBox {
 
   /* border: 2px solid white; */
-  border-radius: 10%;
-  background-color: #fffbfc;
-  height: 35vh;
-  width: 35vh;
+  border-radius: 3%;
+  /* background-color: #fffbfc; */
+  height: 50vh;
+  width: 50vh;
 }
 
 .gridRest {
@@ -170,7 +170,7 @@ button {
   font-family: 'Montserrat', sans-serif;
   font-size: 18px;
 }
-/*
+
 figure:hover figcaption {
   opacity: 1;
   height: 100%;
@@ -387,11 +387,6 @@ figure:hover figcaption {
         font-family: 'Montserrat', sans-serif;
         width: 50vw;
         margin-left: -80px;
-      }
-
-
-      .restaurants {
-
       }
 
       .footerRest {
