@@ -36,7 +36,9 @@ namespace ZAMN.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"SELECT * FROM IndianBeach;";
+     
+      cmd.CommandText = @"SELECT * FROM indianbeach;";
+
       var rdr = cmd.ExecuteReader() as MySqlDataReader;
       while(rdr.Read())
       {
@@ -61,7 +63,8 @@ namespace ZAMN.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"SELECT * FROM IndianBeach WHERE id = (@searchId);";
+      cmd.CommandText = @"SELECT * FROM indianbeach WHERE id = (@searchId);";
+
       MySqlParameter searchId = new MySqlParameter();
       searchId.ParameterName = "@searchId";
       searchId.Value = id;
@@ -94,7 +97,8 @@ namespace ZAMN.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"INSERT INTO IndianBeach (userName, comment, time) VALUES (@userName, @comment, @time)";
+      cmd.CommandText = @"INSERT INTO indianbeach (userName, comment, time) VALUES (@userName, @comment, @time)";
+
       MySqlParameter userName = new MySqlParameter();
       userName.ParameterName = "@userName";
       userName.Value = this._name;
@@ -124,7 +128,7 @@ namespace ZAMN.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"DELETE FROM IndianBeach WHERE id = @searchId;";
+      cmd.CommandText = @"DELETE FROM indianbeach WHERE id = @searchId;";
       MySqlParameter searchId = new MySqlParameter();
       searchId.ParameterName = "@searchId";
       searchId.Value = _id;
@@ -142,7 +146,7 @@ namespace ZAMN.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"UPDATE IndianBeach SET userName = @newName, comment = @newComment, time = @newTime WHERE id = @searchId;";
+      cmd.CommandText = @"UPDATE indianbeach SET userName = @newName, comment = @newComment, time = @newTime WHERE id = @searchId;";
 
       MySqlParameter searchId = new MySqlParameter();
       searchId.ParameterName = "@searchId";
@@ -200,7 +204,7 @@ namespace ZAMN.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"DELETE FROM IndianBeach;";
+      cmd.CommandText = @"DELETE FROM indianbeach;";
       cmd.ExecuteNonQuery();
       conn.Close();
       if (conn != null)
