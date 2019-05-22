@@ -2,7 +2,7 @@
   Layout = "_Layout";
 }
 
-<body id="surfBackground">
+<body>
 
   <div class="container">
     <header>
@@ -14,20 +14,20 @@
     <img class="first" src="../img/shortSands/shortSands.jpg" alt="Short Sands Beach" height="225px" />
     <img src="../img/shortSands/shortSands7.jpg" alt="Short Sands Beach" height="225px" />
     <img src="../img/shortSands/shortSands1.jpg" alt="Short Sands Beach" height="225px" />
-
     <img src="../img/shortSands/shortSands5.jpg" alt="Short Sands Beach" height="225px" />
     <img src="../img/shortSands/shortSands6.jpg" alt="Short Sands Beach" height="225px" />
     <img src="../img/shortSands/shortSands8.jpg" alt="Short Sands Beach" height="225px" />
-    <img src="../img/shortSands/shortSands9.jpg" alt="Short Sands Beach" height="225px" />
+    <!-- <img src="../img/shortSands/shortSands9.jpg" alt="Short Sands Beach" height="225px" /> -->
     <img src="../img/shortSands/shortSands10.jpg" alt="Short Sands Beach" height="225px" />
+    <img src="../img/shortSands/shortSands3.jpg" alt="Short Sands Beach" height="225px" />
+    <img src="../img/shortSands/shortSands4.jpg" alt="Short Sands Beach" height="225px" />
+    <img src="../img/shortSands/shortSands7.jpg" alt="Short Sands Beach" height="225px" />
     <img src="../img/shortSands/shortSands1.jpg" alt="Short Sands Beach" height="225px" />
-    <img src="../img/shortSands/shortSands6.jpg" alt="Short Sands Beach" height="225px" />
-    <img src="../img/shortSands/shortSands5.jpg" alt="Short Sands Beach" height="225px" />
   </div>
 
 <!-- weather -->
   <div class="container"
-  <header id="weather">[ ShortSands] <a class="weatherwidget-io" href="https://forecast7.com/en/45d72n123d89/nehalem/?unit=us" data-label_1="NEHALEM" data-label_2="WEATHER" data-theme="original" >NEHALEM WEATHER</a>
+  <header id="weather"> <a class="weatherwidget-io" href="https://forecast7.com/en/45d72n123d89/nehalem/?unit=us" data-label_1="NEHALEM" data-label_2="WEATHER" data-theme="original" >NEHALEM WEATHER</a>
     <script>
       !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
     </script>
@@ -58,18 +58,20 @@
 <div class="container">
   <div id="commentGrid" class="grid">
 
-    <figure id="linkToForm" class="locationGridBox3">
-      <figcaption1>
-        <p>ARE YOU AT SHORT SANDS RIGHT NOW? ADD YOUR OWN WEATHER/WAVE OBSERVATIONS!</p>
+    <figure>
+      <figcaption1 id="linkToForm">
+        <button style="btn btn-dark"<a href='/shortSands/user/new'>ARE YOU AT SHORT SANDS RIGHT NOW?<br>
+        CLICK HERE ADD YOUR OWN WEATHER/WAVE OBSERVATIONS!</a></button>
       </figcaption1>
-      <a href="####link to new form###"></a>
     </figure>
 
-    <figure id="commentsDisplay" class="locationGridBox3">
+    <figure id="commentsDisplay" class="commentGridBox">
       <figcaption1>
-        <p>Are you at Short Sands; add your own wave and weather observations!</p>
-      </figcaption1>
-      <a href="####link to new form###"></a>
+        <p id="commentTitle">USER'S COMMENTS ON CURRENT CONDITIONS:</p>
+        <p>user name</p>
+        <p>the beach is packed today and the Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<br>
+        ...............................................................................................................................................................................</p>
+
     </figure>
   </div>
 </div>
