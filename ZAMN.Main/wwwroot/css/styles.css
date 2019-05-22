@@ -337,6 +337,11 @@ figcaption > p {
   margin-left: -100px;
 }
 
+#description {
+  display: flex;
+  justify-content: center;
+  }
+
 #commentGrid {
 display: grid;
 /* grid-column-gap: 5%; */
@@ -348,15 +353,15 @@ margin: auto;
 /* background-color: black; */
 }
 
-button {
-  height: 16vh;
-  width: 70vw;
+#locationButton {
+  height: 8vh;
+  width: 60vw;
   border: 2px solid #282A2A;
   background-color: #282A2A;
   padding 10 40 10 40;
   text-align: center;
   margin-left: 3%;
-  color: #F2F2F3;
+  color: white;
   font-size: 22px;
   font-family: 'Montserrat', sans-serif;
 }
