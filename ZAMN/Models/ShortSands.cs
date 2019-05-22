@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Globalization;
 using MySql.Data.MySqlClient;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,14 @@ namespace ZAMN.Models
     private string _name;
     private string _comment;
     private DateTime _timePost;
+
+    public ShortSands (string name, string comment, int id = 0)
+    {
+      _name = name;
+      _comment = comment;
+      _timePost = DateTime.Now;
+      _id = id;
+    }
 
     public ShortSands (string name, string comment, DateTime timePost, int id = 0)
     {

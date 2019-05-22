@@ -36,7 +36,9 @@ namespace ZAMN.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
+     
       cmd.CommandText = @"SELECT * FROM indianbeach;";
+
       var rdr = cmd.ExecuteReader() as MySqlDataReader;
       while(rdr.Read())
       {
@@ -62,6 +64,7 @@ namespace ZAMN.Models
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
       cmd.CommandText = @"SELECT * FROM indianbeach WHERE id = (@searchId);";
+
       MySqlParameter searchId = new MySqlParameter();
       searchId.ParameterName = "@searchId";
       searchId.Value = id;
@@ -95,6 +98,7 @@ namespace ZAMN.Models
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
       cmd.CommandText = @"INSERT INTO indianbeach (userName, comment, time) VALUES (@userName, @comment, @time)";
+
       MySqlParameter userName = new MySqlParameter();
       userName.ParameterName = "@userName";
       userName.Value = this._name;
