@@ -225,7 +225,6 @@ figcaption > p {
  100% {
     margin-left: -2125px;
  }
-
 }
 
 @-moz-keyframes bannermove {
@@ -235,7 +234,6 @@ figcaption > p {
  100% {
    margin-left: -2125px;
  }
-
 }
 
 @-webkit-keyframes "bannermove" {
@@ -245,7 +243,6 @@ figcaption > p {
  100% {
    margin-left: -2125px;
  }
-
 }
 
 @-ms-keyframes "bannermove" {
@@ -255,7 +252,6 @@ figcaption > p {
  100% {
    margin-left: -2125px;
  }
-
 }
 
 @-o-keyframes "bannermove" {
@@ -265,14 +261,13 @@ figcaption > p {
  100% {
    margin-left: -2125px;
  }
-
 }
 
 .photobanner {
   display: flex;
   align-items: center;
  height: 250px;
- width: 1450px;
+ width: 2530px;
  margin-bottom: 20px;
  margin-top: 20px;
  background: white;
@@ -303,7 +298,7 @@ figcaption > p {
 
 #weather {
   margin-bottom: 30px;
-  margin-left: 10%;
+  margin-left: 25%;
 }
 
 /* beginning location grid styling */
@@ -354,21 +349,25 @@ margin: auto;
 }
 
 #locationButton {
-  height: 8vh;
-  width: 60vw;
+  height: 6vh;
+  width: 40vw;
   border: 2px solid #282A2A;
   background-color: #282A2A;
   padding 10 40 10 40;
   text-align: center;
   margin-left: 3%;
-  color: white;
-  font-size: 22px;
+  margin-bottom: -30px;
+  }
+
+#buttonText {
+  color: #bfc0c1;
+  font-size: 20px;
   font-family: 'Montserrat', sans-serif;
 }
-
 .commentGridBox {
   /* background-color: black; */
 }
+
 
 #commentTitle {
   font-size: 20px;
@@ -380,7 +379,7 @@ margin: auto;
   padding: 40px;
     grid-column: 1/4;
     font-family: 'Montserrat', sans-serif;
-    width: 80vw;
+    width: 50vw;
   }
 
 
