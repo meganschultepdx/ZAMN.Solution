@@ -30,6 +30,7 @@ CREATE TABLE `restaurants` (
   `name` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `foodtype` varchar(255) NOT NULL
+)
 
 --
 -- Database: `ZAMN`
@@ -105,7 +106,7 @@ ALTER TABLE `users`
 -- Indexes for table `users_locations`
 --
 ALTER TABLE `users_locations`
-  
+
   ADD PRIMARY KEY (`id`);
 
 --
@@ -121,7 +122,7 @@ ALTER TABLE `restaurants`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-  
+
 -- AUTO_INCREMENT for table `locations`
 --
 ALTER TABLE `locations`
@@ -138,4 +139,3 @@ ALTER TABLE `users`
 --
 ALTER TABLE `users_locations`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
