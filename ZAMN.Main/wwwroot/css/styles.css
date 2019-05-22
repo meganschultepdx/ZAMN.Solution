@@ -349,14 +349,15 @@ margin: auto;
 }
 
 button {
-  height: 15vh;
+  height: 16vh;
   width: 70vw;
   border: 2px solid #282A2A;
   background-color: #282A2A;
   padding 10 40 10 40;
   text-align: center;
+  margin-left: 3%;
   color: #F2F2F3;
-  font-size: 26px;
+  font-size: 22px;
   font-family: 'Montserrat', sans-serif;
 }
 
