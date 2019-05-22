@@ -298,7 +298,7 @@ figcaption > p {
 
 #weather {
   margin-bottom: 30px;
-  margin-left: 25%;
+  margin-left: 27%;
 }
 
 /* beginning location grid styling */
@@ -306,36 +306,52 @@ figcaption > p {
 #locationGrid {
     /* margin: 0 10vw 1vh 10vw; */
     display: grid;
-    /* grid-column-gap: 2%; */
+    grid-column-gap: 2%;
     /* grid-row-gap: 7%; */
     grid-template-columns: repeat(3, 1fr);
     margin: auto;
     height: 550px;
-    width: 1200px;
-    /* background-color: black; */
-}
+    width: 1100px;
+    }
 
 .locationGridBox {
   /* background-color: black; */
 }
 
-#swell {
+#swell1 {
   /* margin-right: 20px; */
-  height: 80vh;
-  width: 28vw;
+  height: 50vh;
+  width: 15vw;
+}
+
+#swell2 {
+  /* margin-right: 20px; */
+  height: 50vh;
+  width: 15vw;
 }
 
 #tides {
   /* margin-right: 20px; */
-  height: 65vh;
-  width: 16vw;
-  margin-left: -100px;
+  height: 50vh;
+  width: 9vw;
+  /* margin-left: -100px; */
 }
 
 #description {
-  display: flex;
-  justify-content: center;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  font-size: 18px;
   }
+
+#descriptionTitle {
+    display: grid;
+    margin: auto;
+    font-size: 22px;
+    border: 2px solid black;
+    width: 15vw;
+    padding: 5px;
+    margin-bottom: 10px;
 
 #commentGrid {
 display: grid;
@@ -344,8 +360,8 @@ display: grid;
 grid-template-columns: repeat(1, 2fr);
 margin: auto;
 /* border-radius: 5px; */
-/* margin-top: 20px; */
-/* background-color: black; */
+margin-top: 20px; */
+/* background-color: black;
 }
 
 #locationButton {
