@@ -305,43 +305,33 @@ figure:hover figcaption {
       /* beginning location grid styling */
 
       #locationGrid {
-        /* margin: 0 10vw 1vh 10vw; */
         display: grid;
         grid-column-gap: 2%;
-        /* grid-row-gap: 7%; */
         grid-template-columns: repeat(3, 1fr);
         margin: auto;
         height: 550px;
         width: 1100px;
       }
 
-      .locationGridBox {
-        /* background-color: black; */
-      }
-
       #swell1 {
-        /* margin-right: 20px; */
         height: 50vh;
         width: 15vw;
       }
 
       #swell2 {
-        /* margin-right: 20px; */
         height: 50vh;
         width: 15vw;
       }
 
       #tides {
-        /* margin-right: 20px; */
         height: 50vh;
         width: 9vw;
-        /* margin-left: -100px; */
       }
 
       #description {
         text-align: center;
         margin-top: 30px;
-        margin-bottom: 50px;
+        margin-bottom: 70px;
         font-size: 18px;
       }
 
@@ -357,34 +347,32 @@ figure:hover figcaption {
 
       #commentGrid {
         display: grid;
-        /* grid-column-gap: 5%; */
-        /* grid-row-gap: 7%; */
         grid-template-columns: repeat(1, 2fr);
         margin: auto;
-        /* border-radius: 5px; */
         margin-top: 20px; */
-
       }
 
       #locationButton {
         display: grid;
         margin: auto;
-        height: 6vh;
-        width: 40vw;
-        border: 2px solid #282A2A;
-        background-color: #282A2A;
+        height: 7vh;
+        width: 50vw;
+        border: 2px solid #404142;
+        background-color: #404142;
         padding 10 40 10 40;
-        text-align: center;
-        margin-bottom: -10px;
+        margin-bottom: -20px;
+        margin-left: -80px;
       }
 
       #buttonText {
+        text-align: center;
         color: #bfc0c1;
         font-size: 20px;
         font-family: 'Montserrat', sans-serif;
       }
-      .commentGridBox {
-        /* background-color: black; */
+
+      #buttonText:hover {
+        color: #F6AA1C;
       }
 
       #commentTitle {
@@ -393,7 +381,7 @@ figure:hover figcaption {
       }
 
       #commentsDisplay {
-        border: 4px solid black;
+        border: 4px solid #404142;
         padding: 40px;
         grid-column: 1/4;
         font-family: 'Montserrat', sans-serif;
