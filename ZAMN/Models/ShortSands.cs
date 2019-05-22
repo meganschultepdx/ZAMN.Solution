@@ -11,18 +11,19 @@ namespace ZAMN.Models
     private int _id;
     private string _name;
     private string _comment;
-    public static DateTime Now { get; }
+    private DateTime _timePost;
 
     public ShortSands (string name, string comment, DateTime timePost, int id = 0)
     {
       _name = name;
       _comment = comment;
-      DateTime Now = DateTime.Now;
+      _timePost = timePost;
       _id = id;
     }
 
     public string Name { get => _name; set => _name = value; }
     public string Comment { get => _comment; set => _comment = value; }
+    public DateTime PostTime { get => _timePost; set => _timePost = value; }
 
     public int GetId()
     {
@@ -42,9 +43,9 @@ namespace ZAMN.Models
         int id = rdr.GetInt32(0);
         string userName = rdr.GetString(1);
         string userComment = rdr.GetString(2);
-        DateTime Now = rdr.DateTime.Now(3);
+        DateTime timeStamp = rdr.GetDateTime(3);
 
-        ShortSands newPost = new ShortSands(userName, userComment, DateTime.Now, id);
+        ShortSands newPost = new ShortSands(userName, userComment, timeStamp, id);
         allPosts.Add(newPost);
       }
       conn.Close();
@@ -69,7 +70,7 @@ namespace ZAMN.Models
       int locationId = 0;
       string userName = "";
       string userComment = "";
-      DateTime Now = new DateTime(2000, 11, 11);
+      DateTime timeStamp = new DateTime(2000, 11, 11);
 
       while(rdr.Read())
       {
