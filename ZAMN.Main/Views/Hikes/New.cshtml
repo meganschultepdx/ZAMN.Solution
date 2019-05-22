@@ -1,0 +1,55 @@
+@{
+  Layout = "_Layout";
+}
+
+<div class="gridHeader">
+  <div class="header">
+    <ul class="menu">
+      <li>
+        <form class="form-inline" action="/action_page.php">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-success" type="submit">SEARCH</button>
+        </form>
+      </li>
+      <li><a href='/'>HOME</a></li>
+      <li><a href='/DIRECTIONS'>DIRECTIONS</a></li>
+      <li><a href='/restaurants'>FOOD</a></li>
+      <li><a href='/hikes'>HIKES</a></li>
+      <li><a href='/login'>LOGIN</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+  <div class="addnewrest">
+    <h2>Add a hike</h2>
+    <hr>
+    <div class="row">
+      <div class="col-md-6 panel-body">
+        <form action="/hikes" method="post">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text">
+          </div>
+          <div class="form-group">
+            <label for="address">Nearby surf spot</label>
+            <input id="address" name="address" type="text">
+            <br>
+          </div>
+          <div class="form-group">
+            <label for="type">Type of food</label>
+            <input id="type" name="type" type="text">
+          </div>
+          <div class="form-group">
+            <label for="description">Tell us about your experience</label>
+            <!-- <input id="description" name="description" ROWS="2" COLS="20" type="text"> -->
+            <TEXTAREA id="description" name="description" ROWS="2" COLS="20" type="text"></TEXTAREA>
+          </div>
+          <button class="btn btn-success" type="submit">Add</button>
+        </form>
+      </div>
+    </div>
+    <br>
+    <p><a href="/hikes">Back to hikes</a></p>
+  </div>
+</div>
