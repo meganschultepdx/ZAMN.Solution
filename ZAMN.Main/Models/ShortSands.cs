@@ -36,7 +36,7 @@ namespace ZAMN.Models
       {
         int id = rdr.GetInt32(0);
         string userName = rdr.GetString(1);
-        string userComment = rdr.GetString(1);
+        string userComment = rdr.GetString(2);
 
         ShortSands newPost = new ShortSands(userName, userComment, id);
         allPosts.Add(newPost);
