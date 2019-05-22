@@ -2,18 +2,44 @@
   Layout = "_Layout";
 }
 
-<body>
-  <h1 class="welcome">Add a comment</h1>
+<div class="gridHeader">
+  <div class="header">
+    <ul class="menu">
+      <li>
+        <form class="form-inline" action="/action_page.php">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-success" type="submit">SEARCH</button>
+        </form>
+      </li>
+      <li><a href='/'>HOME</a></li>
+      <li><a href='/DIRECTIONS'>DIRECTIONS</a></li>
+      <li><a href='/restaurants'>FOOD</a></li>
+      <li><a href='/login'>LOGIN</a></li>
+    </ul>
+  </div>
+</div>
 
+<div class="container">
+  <div class="addnewrest">
+    <h2>Add a comment about Short Cape Kiwanda</h2>
+    <hr>
+    <div class="row">
+      <div class="col-md-6 panel-body">
+        <form action="/shortsands" method="post">
+          <div class="form-group">
+            <label for="userName">Name</label>
+            <input id="userName" name="userName" type="text">
+          </div>
 
-  <form action="/capeKiwanda" method="post">
-    <label for="userName" class="userName">Enter your name:</label><br>
-    <input id="userName" name="userName" type="text">
-
-    <label for="userComment" class="userComment">Enter your comment:</label><br>
-    <input id="userComment" name="userComment" type="text">
-
-    <button type="submit" class="btn btn-info btn-sm">+</button>
-  </form>
-
-</body>
+          <div class="form-group">
+            <label for="userComment">Leave a comment:</label><br>
+            <TEXTAREA id="userName" name="userComment" ROWS="2" COLS="20" type="text"></TEXTAREA>
+          </div>
+          <button class="btn btn-success" type="submit">Add</button>
+        </form>
+      </div>
+    </div>
+    <br>
+    <p><a href="capekiwanda">Back to Cape Kiwanda!</a></p>
+  </div>
+</div>
