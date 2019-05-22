@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Globalization;
 using MySql.Data.MySqlClient;
 using System.Linq;
 using System.Text;
@@ -7,22 +6,14 @@ using System;
 
 namespace ZAMN.Models
 {
-  public class ShortSands
+  public class IndianBeach
   {
     private int _id;
     private string _name;
     private string _comment;
     private DateTime _timePost;
 
-    public ShortSands (string name, string comment, int id = 0)
-    {
-      _name = name;
-      _comment = comment;
-      _timePost = DateTime.Now;
-      _id = id;
-    }
-
-    public ShortSands (string name, string comment, DateTime timePost, int id = 0)
+    public IndianBeach (string name, string comment, DateTime timePost, int id = 0)
     {
       _name = name;
       _comment = comment;
@@ -39,13 +30,13 @@ namespace ZAMN.Models
       return _id;
     }
 
-    public static List<ShortSands> GetAll()
+    public static List<IndianBeach> GetAll()
     {
-      List<ShortSands> allPosts = new List<ShortSands>{};
+      List<IndianBeach> allPosts = new List<IndianBeach>{};
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"SELECT * FROM shortsands;";
+      cmd.CommandText = @"SELECT * FROM IndianBeach;";
       var rdr = cmd.ExecuteReader() as MySqlDataReader;
       while(rdr.Read())
       {
@@ -54,7 +45,7 @@ namespace ZAMN.Models
         string userComment = rdr.GetString(2);
         DateTime timeStamp = rdr.GetDateTime(3);
 
-        ShortSands newPost = new ShortSands(userName, userComment, timeStamp, id);
+        IndianBeach newPost = new IndianBeach(userName, userComment, timeStamp, id);
         allPosts.Add(newPost);
       }
       conn.Close();
@@ -65,12 +56,12 @@ namespace ZAMN.Models
       return allPosts;
     }
 
-    public static ShortSands Find(int id)
+    public static IndianBeach Find(int id)
     {
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"SELECT * FROM shortsands WHERE id = (@searchId);";
+      cmd.CommandText = @"SELECT * FROM IndianBeach WHERE id = (@searchId);";
       MySqlParameter searchId = new MySqlParameter();
       searchId.ParameterName = "@searchId";
       searchId.Value = id;
@@ -89,7 +80,7 @@ namespace ZAMN.Models
         timeStamp = rdr.GetDateTime(3);
 
       }
-      ShortSands newPost = new ShortSands(userName, userComment, timeStamp);
+      IndianBeach newPost = new IndianBeach(userName, userComment, timeStamp);
       conn.Close();
       if (conn != null)
       {
@@ -103,7 +94,7 @@ namespace ZAMN.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"INSERT INTO shortsands (userName, comment, time) VALUES (@userName, @comment, @time)";
+      cmd.CommandText = @"INSERT INTO IndianBeach (userName, comment, time) VALUES (@userName, @comment, @time)";
       MySqlParameter userName = new MySqlParameter();
       userName.ParameterName = "@userName";
       userName.Value = this._name;
@@ -133,7 +124,7 @@ namespace ZAMN.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"DELETE FROM shortsands WHERE id = @searchId;";
+      cmd.CommandText = @"DELETE FROM IndianBeach WHERE id = @searchId;";
       MySqlParameter searchId = new MySqlParameter();
       searchId.ParameterName = "@searchId";
       searchId.Value = _id;
@@ -151,7 +142,7 @@ namespace ZAMN.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"UPDATE shortsands SET userName = @newName, comment = @newComment, time = @newTime WHERE id = @searchId;";
+      cmd.CommandText = @"UPDATE IndianBeach SET userName = @newName, comment = @newComment, time = @newTime WHERE id = @searchId;";
 
       MySqlParameter searchId = new MySqlParameter();
       searchId.ParameterName = "@searchId";
@@ -182,15 +173,15 @@ namespace ZAMN.Models
       }
     }
 
-    public override bool Equals(System.Object otherShortSands)
+    public override bool Equals(System.Object otherIndianBeach)
     {
-      if (!(otherShortSands is ShortSands))
+      if (!(otherIndianBeach is IndianBeach))
       {
         return false;
       }
       else
       {
-        ShortSands newPost = (ShortSands) otherShortSands;
+        IndianBeach newPost = (IndianBeach) otherIndianBeach;
         bool idEquality = this.GetId().Equals(newPost.GetId());
         bool nameEquality = this.Name.Equals(newPost.Name);
         bool commentEquality = this.Comment.Equals(newPost.Comment);
@@ -209,7 +200,7 @@ namespace ZAMN.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"DELETE FROM shortsands;";
+      cmd.CommandText = @"DELETE FROM IndianBeach;";
       cmd.ExecuteNonQuery();
       conn.Close();
       if (conn != null)

@@ -24,9 +24,9 @@ namespace ZAMN.Controllers
     }
 
     [HttpPost("/indianbeach")]
-    public ActionResult Create(string userName, string userComment)
+    public ActionResult Create(string userName, string userComment, DateTime timePost)
     {
-      IndianBeach newPost = new IndianBeach(userName, userComment);
+      IndianBeach newPost = new IndianBeach(userName, userComment, timePost);
       newPost.Save();
       List<IndianBeach> allPosts = IndianBeach.GetAll();
       return View("Index", allPosts);
