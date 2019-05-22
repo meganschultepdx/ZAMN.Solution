@@ -1,0 +1,97 @@
+@{
+  Layout = "_Layout";
+}
+
+<body>
+    <div class="gridHeader">
+      <div class="header">
+        <ul class="menu">
+          <li>
+            <form class="form-inline" action="/action_page.php">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search">
+              <button class="btn btn-primary" type="submit">SEARCH</button>
+            </form>
+          </li>
+          <li><a href='/'>HOME</a></li>
+          <li><a href='/DIRECTIONS'>DIRECTIONS</a></li>
+          <li><a href='/restaurants'>FOOD</a></li>
+          <li><a href='/hikes'>HIKES</a></li>
+          <li><a href='/login'>LOGIN</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="container">
+      <header>
+        <h1 id="locationTitle">INDIAN BEACH</h1>
+      </header>
+    </div>
+
+    <div class="photobanner">
+      <img class="first" src="../img/indianBeach/indianBeach.jpg" alt="Indian Beach" height="200px" />
+      <img src="../img/indianBeach/indianBeach3.jpg" alt="Indian Beach" height="200px" />
+      <img src="../img/indianBeach/indianBeach4.jpg" alt="Indian Beach" height="200px" />
+      <img src="../img/indianBeach/indianBeach5.jpg" alt="Indian Beach" height="200px" />
+      <img src="../img/indianBeach/indianBeach6.jpg" alt="Indian Beach" height="200px" />
+      <img src="../img/indianBeach/indianBeach7.jpg" alt="Indian Beach" height="200px" />
+      <img src="../img/indianBeach/indianBeach8.jpg" alt="Indian Beach" height="200px" />
+      <img src="../img/indianBeach/indianBeach9.jpg" alt="Indian Beach" height="200px" />
+      <img src="../img/indianBeach/indianBeach10.jpg" alt="Indian Beach" height="200px" />
+      <img src="../img/indianBeach/indianBeach11.jpg" alt="Indian Beach" height="200px" />
+      <img src="../img/indianBeach/indianBeach12.jpg" alt="Indian Beach" height="200px" />
+    </div>
+
+    <!-- weather -->
+    <div class="container"
+    <header id="weather"> <a class="weatherwidget-io" href="https://forecast7.com/en/45d72n123d89/nehalem/?unit=us" data-label_1="NEHALEM" data-label_2="WEATHER" data-theme="original" >NEHALEM WEATHER</a>
+      <script>
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+      </script>
+    </header>
+  </div>
+
+  <!-- widgets -->
+  <div class="container">
+    <div id="locationGrid" class="grid">
+
+      <figure id="swell" class="locationGridBox">
+        <!-- <figcaption1>
+        <p>SWELL GRAPH</p>
+      </figcaption1> -->
+      <div style="width:100px;background:#fff"><script type="text/javascript" src="http://magicseaweed.com/syndicate/index.php?licenseKey=1558480820_74327"></script><p><div style="font-family:Arial, Helvetica, sans-serif;text-align:center;font-size:10px;color:#000;height:25px;"><a href="http://magicseaweed.com/Oregon-Surf-Forecast/15/" style="color:#000;"></a></div></p></div>
+    </figure>
+
+    <figure id="swell" class="locationGridBox">
+      <div style="width:100px;background:#fff"><script type="text/javascript" src="http://magicseaweed.com/syndicate/index.php?licenseKey=1558481015_14013"></script><p><div style="font-family:Arial, Helvetica, sans-serif;text-align:center;font-size:10px;color:#000;height:25px;"><a href="http://magicseaweed.com/Smugglers-Cove-Surf-Report/314/" style="color:#000;"></a></div></p></div>
+    </figure>
+
+    <figure id="tides" class="locationGridBox">
+      <script src="//tides.tidegraph.com/api/tidegraph.php?bg=white&scale=0.75&color=black&lat=45.7698&lng=-123.9591"></script>
+    </figure>
+  </div>
+</div>
+
+  <div class="container">
+    <div id="commentGrid" class="grid">
+
+      <figure>
+        <figcaption1 id="linkToForm">
+          <button style="btn btn-dark"<a href='/shortSands/user/new'>ARE YOU AT INDIAN BEACH RIGHT NOW?<br>
+            CLICK HERE ADD YOUR OWN WEATHER/WAVE OBSERVATIONS!</a></button>
+          </figcaption1>
+        </figure>
+
+        <figure id="commentsDisplay" class="commentGridBox">
+          <figcaption1>
+            <p id="commentTitle">USER'S COMMENTS ON CURRENT CONDITIONS:</p>
+          </figcaption1>
+
+        
+            <p>...............................................................................................................................................................................</p>
+
+          </figure>
+        </div>
+      </div>
+
+
+    </body>
