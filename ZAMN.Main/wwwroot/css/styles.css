@@ -203,6 +203,7 @@ figcaption > p {
  text-align: center;
  font: 50px/1.5 'Montserrat', Verdana, sans-serif;
  color: #5C6265;
+ letter-spacing: 2px;
  }
 
 
@@ -339,7 +340,7 @@ figcaption > p {
 #commentGrid {
 display: grid;
 /* grid-column-gap: 5%; */
-grid-row-gap: 7%;
+/* grid-row-gap: 7%; */
 grid-template-columns: repeat(1, 2fr);
 margin: auto;
 /* border-radius: 5px; */
@@ -347,13 +348,20 @@ margin: auto;
 /* background-color: black; */
 }
 
-#linkToForm {
-  height: 11vh;
+button {
+  height: 15vh;
   width: 70vw;
+  border: 2px solid #282A2A;
   background-color: #282A2A;
+  padding 10 40 10 40;
   text-align: center;
-  color: white;
-  font-size: 24px;
+  color: #F2F2F3;
+  font-size: 26px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.commentGridBox {
+  /* background-color: black; */
 }
 
 #commentTitle {
