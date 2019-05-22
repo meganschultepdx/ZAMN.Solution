@@ -14,6 +14,7 @@ h4, h5, p {
 
 a, a:hover {
   color: #50514F;
+  text-decoration: none;
 }
 
 h1 {
@@ -66,7 +67,6 @@ button {
 
 .restaurants button {
   margin-bottom: 5%;
-
 }
 
 .gridHeader {
@@ -99,16 +99,16 @@ button {
   grid-row-gap: 7%;
   grid-template-columns: repeat(3, 2fr);
   justify-items: center;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 
 .gridBox {
 
   /* border: 2px solid white; */
-  border-radius: 10%;
-  background-color: #fffbfc;
-  height: 35vh;
-  width: 35vh;
+  border-radius: 3%;
+  /* background-color: #fffbfc; */
+  height: 50vh;
+  width: 50vh;
 }
 
 .gridRest {
@@ -170,31 +170,33 @@ button {
   font-family: 'Montserrat', sans-serif;
   font-size: 18px;
 }
-/*
+
 figure:hover figcaption {
-  opacity: 1;
-  height: 100%;
-  width: 100%;
-  display: block;
-} */
-
-/* figure:hover img {
-  opacity: 1;
-  display: none;
-} */
-/*
-figcaption {
-  height: 100%;
-  width: 100%;
-  display: none;
-} */
-
-figcaption > p {
-  text-align: center;
-  color: white;
-  font-size: 20px;
   text-decoration: none;
+  color: #F6AA1C;
 }
+
+figure:hover img {
+  text-decoration: none;
+  color: #F6AA1C;
+}
+
+/* figcaption {
+  height: 100%;
+  width: 100%;
+  display: none;
+} */
+
+figcaption {
+  text-align: center;
+  color: #50514F;
+  font-size: 20px;
+}
+
+/* figcaption:hover {
+  color: #50514F;
+  text-decoration: overline;
+} */
 
 
 /* START location styling */
@@ -394,6 +396,7 @@ margin: auto;
   font-family: 'Montserrat', sans-serif;
 }
 
+/* AJ!! this is the form styling thing */
 .addnewrest input[type=text], select {
   width: 200%;
   padding: 12px 20px;
