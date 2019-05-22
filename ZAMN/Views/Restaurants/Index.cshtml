@@ -1,27 +1,77 @@
 @{
     Layout = "_Layout";
-    ViewData["Title"] = "Restaurants";
 }
 
-<div class=container>
-  <h2>@ViewData["Title"]</h2>
+<div class="gridHeader">
+  <div class="header">
+    <ul class="menu">
+      <li>
+        <form class="form-inline" action="/action_page.php">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-success" type="submit">SEARCH</button>
+        </form>
+      </li>
+      <li><a href='/'>HOME</a></li>
+      <li><a href='/DIRECTIONS'>DIRECTIONS</a></li>
+      <li><a href='/restaurants'>FOOD</a></li>
+      <li><a href='/login'>LOGIN</a></li>
+    </ul>
+  </div>
+</div>
+<div class="grid">
+
+<div class="container">
+  <h2>Where to eat and drink before and after surfing</h2>
   <hr>
 
-  @if (@Model.Count == 0)
-  {
-    <h3>No restaurants have been added yet!</h3>
-  }
+  <div class="restaurants">
+    <div class="gridRest">
+      <figure class="guide gridBoxRest">
+        <h3>Shortsands Beach :: Sand Dune Pub</h3>
+        <p>127 Laneda Ave, Nehalem, OR 97131</p>
+        <img src="../img/hummus.jpg" alt="hummus" width="600px">
+        <img src="../img/ShortSand.png" alt="map from beach to restaurant" width="600px">
+        <p>$$ | American, Bar</p>
+        <p>Relax in the lodge-like setting at the Historic San Dune Pub just 3 blocks from the Shortsands beach. Warm up next to the big stone fireplace and have your favorite drink from the full service bar. If you are a sports fan, we have 5 TVs, 2- 50" Big Screen. On a clear day enjoy the beautiful patio with bistro seating and market umbrellas. (21+)
+      </figure>
+      <figure class="guide gridBoxRest">
+      <h3>Pacific City :: Pelican Brewery</h3>
+        <p>33180 Cape Kiwanda Dr, Pacific City, OR 97135</p>
+        <img src="../img/burger.jpg" alt="burger" width="600px">
+        <img src="../img/PacificPelican.png" alt="map from beach to restaurant" width="600px">
+        <p>$$ | American, Brewery</p>
+        <p>The only beachfront brewpub in the Pacific Northwest, this inviting establishment welcomes guests with tantalizing beer cuisine, intimate brewery tours and, arguably, the most incredible beach patio experience around. Gaze in awe at Oregon’s largest Haystack Rock. Watch the surfers. See the sun set. Order another beer.</p>
+      </figure>
+      <figure class="guide gridBoxRest">
+      <h3>Indian Beach :: Tom's Fish Chips</h3>
+        <p>240 N Hemlock St, Cannon Beach, OR 97110</p>
+        <img src="../img/fish.jpg" alt="fish and chips" width="600px">
+        <img src="../img/IndianToms.png" alt="map from beach to restaurant" width="600px">
+        <p>$ | American, Seafood</p>
+        <p>Tom's restaurant located on the corner of Holladay and Broadway in Seaside. Serving affordable fish & chips, fish tacos, salads, chowder, classic burgers and excellent beer. The food here is simple, tasty and fairly priced. Great craft beer on tap and a fun and friendly atmosphere!</p>
+      </figure
+      <hr>
+      <div class= "footerRest">
+        <h5>See what others are recommending or add a new restaurant:</h5>
+        <br>
+        <button><a href='/restaurants/new'>Add a new restaurant</a></button>
+        <br>
 
-  @foreach (var restaurant in Model)
-  {
-    <h3><a href="/restaurants/@restaurant._restaurantId">@restaurant._restaurantName</a>
-    <p>@restaurant._restaurantAddress</p>
-    <p>@restaurant._restaurantType</p>
-    </h3>
-  }
+        @if (@Model.Count == 0)
+        {
+          <h3>No restaurants have been added yet!</h3>
+        }
+        @foreach (var restaurant in Model)
+        {
+          <h3>@restaurant._restaurantName</h3>
+          <p>@restaurant._restaurantAddress
+          || @restaurant._restaurantType</p>
+          <p>@restaurant._restaurantDescription</p>
+          <hr>
+        }
 
-  <br>
-  <p><a href='/restaurants/new'>Add a new restaurant</a></p>
-  <p><a href='/restaurants/delete'>Delete all restaurants</a></p>
-
+        <br>
+      </div>
+    </div>
+  </div>
 </div>

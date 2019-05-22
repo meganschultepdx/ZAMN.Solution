@@ -24,9 +24,9 @@ namespace ZAMN.Controllers
     }
 
     [HttpPost("/restaurants")]
-    public ActionResult Create(string name, string address, string type)
+    public ActionResult Create(string name, string address, string type, string description)
     {
-      Restaurant newRestaurant = new Restaurant(name, address, type);
+      Restaurant newRestaurant = new Restaurant(name, address, type, description);
       newRestaurant.Save();
       List<Restaurant> allRestaurants = Restaurant.GetAll();
       return View("Index", allRestaurants);
