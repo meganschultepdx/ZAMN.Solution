@@ -80,35 +80,38 @@
 
 </div>
 
+<div id="description" class="container">
+<p id="descriptionTitle"><strong>SPOT GUIDE FOR CAPE KIWANA</strong></p>
+<p><img src="../img/surfboard.png" width="20px"><strong>Accessibility:</strong>  You can literally drive your vehicle on the beach. Parking fills up before noon on a nice weekend and the beach is sprawling with pickup trucks and Dorry boats launching directly onto the sand near the cape.</p>
+<p><img src="../img/surfboard.png" width="20px"><strong>Vibe:</strong>  Some localism exists. A beginner can expect to be dropped in upon on a crowded day.</p>
+<p><img src="../img/surfboard.png" width="20px"><strong>Crowd Factor:</strong>  Medium level crowds, can get busy.</p>
+<p><img src="../img/surfboard.png" width="20px"><strong>Skill Level:</strong> Although a beach break, this spot is best for intermediate level surfers and beyond. Often a dredging shorebreak style wave can be found south from the cape, whereas a reef-pointbreak works on a big swell next to the cape.</p>
+</div>
+
 <div class="container">
-  <div id="commentGrid" class="grid">
+  <div id="commentGrid">
+    <figure>
+      <figcaption1 id="linkToForm">
+        <button id="locationButton"><a id="buttonText" href='/capekiwanda/new'>ARE YOU AT CAPE KIWANDA RIGHT NOW?
+        CLICK HERE ADD YOUR OWN WEATHER/WAVE OBSERVATIONS!</a></button>
+      </figcaption1>
+    </figure>
 
-      <figure>
-        <figcaption1 id="linkToForm">
-          <button style="btn btn-dark"<a href='/shortSands/user/new'>ARE YOU AT CAPE KIWANDA RIGHT NOW?<br>
-            CLICK HERE ADD YOUR OWN WEATHER/WAVE OBSERVATIONS!</a></button>
-          </figcaption1>
-        </figure>
+    <figure id="commentsDisplay" class="commentGridBox">
+      <figcaption1>
+        <p id="commentTitle">HERE'S WHAT USERS ARE SAYING ABOUT THE CURRENT CONDITIONS AT CAPE KIWANDA:</p>
+      </figcaption1>
 
-        <figure id="commentsDisplay" class="commentGridBox">
-          <figcaption1>
-            <p id="commentTitle">USER'S COMMENTS ON CURRENT CONDITIONS:</p>
-          </figcaption1>
-          @*
-          @if (@Model.Count == 0)
-          {
-            <h3>No comments have been added yet!</h3>
-          }
-          @foreach (var user in Model)
-          {
-            <h3>@user._name
-              || @user._DateTime</h3>
-              <p>@user._comment</p>*@
-
-            }
-            <br>
-            <p>...............................................................................................................................................................................</p>
-
+      @if (@Model.Count == 0)
+      {
+        <h3>No comments have been added yet!</h3>
+      }
+      @foreach (var user in Model)
+      {
+        <h3>@user.Name</h3>
+        @* || @user._DateTime</h3>*@
+        <p>@user.Comment</p><br>
+      }
           </figure>
         </div>
       </div>
