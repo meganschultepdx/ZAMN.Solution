@@ -94,9 +94,9 @@
         }
         @foreach (var user in Model)
         {
-          <h3>@user.Name</h3>
-        
-          <p>@user.Comment</p><br>
+          <h3>@user.Name || @user.PostTime</h3>
+          <p>@user.Comment</p>
+
         }
       </figure>
     </div>
