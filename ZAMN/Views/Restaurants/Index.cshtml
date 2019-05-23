@@ -56,7 +56,6 @@
           <h5>See what others are recommending or add a new restaurant:</h5>
           <br>
           <button><a href='/restaurants/new'>Add a new restaurant</a></button>
-          <br>
 
           @if (@Model.Count == 0)
           {
@@ -65,6 +64,7 @@
           @foreach (var restaurant in Model)
           {
             <h3>@restaurant._restaurantName</h3>
+            <button><a href="/restaurants/@restaurant._restaurantId">Add comment and view other comments</a></button>
             <p>@restaurant._restaurantAddress
             || @restaurant._restaurantType</p>
             <p>@restaurant._restaurantDescription</p>

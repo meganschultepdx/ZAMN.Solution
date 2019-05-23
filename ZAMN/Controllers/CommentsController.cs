@@ -10,29 +10,29 @@ namespace ZAMN.Controllers
 {
   public class CommentsController : Controller
   {
-    [HttpGet("/comments")]
+    [HttpGet("/restaurants/comments")]
     public ActionResult Index()
     {
       List<Comment> allComments = Comment.GetAll();
       return View(allComments);
     }
 
-    [HttpGet("/comments/new")]
+    [HttpGet("/restaurants/comments/new")]
     public ActionResult New()
     {
       return View();
     }
 
-    [HttpPost("/comments")]
-    public ActionResult Create(string description)
+    [HttpPost("/restaurants/comments")]
+    public ActionResult Create(string description, string date)
     {
-      Comment newComment = new Comment(description);
+      Comment newComment = new Comment(description, date);
       newComment.Save();
       List<Comment> allComments = Comment.GetAll();
       return View("Index", allComments);
     }
 
-    [HttpGet("/comments/{id}")]
+    [HttpGet("/restaurants/comments/{id}")]
     public ActionResult Show(int id)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
@@ -45,7 +45,7 @@ namespace ZAMN.Controllers
       return View(model);
     }
 
-    [HttpPost("/comments/{commentsId}/restaurants/new")]
+    [HttpPost("/restaurants/comments/{commentsId}/restaurants/new")]
     public ActionResult AddRestaurant(int commentsId, int restaurantId)
     {
       Comment comment = Comment.Find(commentsId);
@@ -54,16 +54,6 @@ namespace ZAMN.Controllers
       return RedirectToAction("Show",  new { id = commentsId });
     }
 
-    // [HttpPost("/comments/{commentsId}/delete-comment")]
-    // public ActionResult DeleteComment(int commentId)
-    // {
-    //   Comment selectedComment = Comment.Find(commentId);
-    //   selectedComment.DeleteComment(commentId);
-    //   Dictionary<string, object> model = new Dictionary<string, object>();
-    //   List<Comment> commentRestaurants = selectedComment.GetRestaurants();
-    //   model.Add("selectedComment", selectedComment);
-    //   return RedirectToAction("Index", "Comments");
-    // }
   }
 
 }

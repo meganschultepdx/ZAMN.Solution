@@ -1,0 +1,51 @@
+@{
+  Layout = "_Layout";
+}
+
+<div class="gridHeader">
+  <div class="header">
+    <ul class="menu">
+      <!-- <li>
+        <form class="form-inline" action="/action_page.php">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-success" type="submit">SEARCH</button>
+        </form>
+      </li> -->
+      <li><a href='/'>HOME</a></li>
+      <li><a href='/DIRECTIONS'>DIRECTIONS</a></li>
+      <li><a href='/restaurants'>FOOD</a></li>
+      <li><a href='/hikes'>HIKES</a></li>
+      <!-- <li><a href='/login'>LOGIN</a></li> -->
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+
+<h2>Restaurant: @Model["selectedRestaurant"]._restaurantName</h2>
+<hr />
+
+@if (@Model["restaurantComments"].Count != 0)
+{
+  <h4>Comments:</h4>
+  <ol>
+    @foreach (var comment in @Model["restaurantComments"])
+    {
+      <li>@comment._commentDescription | @comment._commentCreated
+      </li>
+    }
+  </ol>
+}
+
+  <h4>Add a comment to this restaurant:</h4>
+  <div class="addnewcomment">
+    <form action='/restaurants/@Model["selectedRestaurant"]._restaurantId/comments/new' method='post'>
+      <TEXTAREA name="comment" cols="200" value=""></TEXTAREA>
+      <input type="submit" value="Submit">
+    </form>
+    <br>
+  </div>
+
+  <br>
+  <p><a href="/restaurants">Return to the list of restaurants</a></p>
+</div>

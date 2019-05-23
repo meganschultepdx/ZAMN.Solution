@@ -66,7 +66,7 @@ button {
 }
 
 .restaurants button {
-  margin-bottom: 5%;
+  margin-bottom: 2%;
 }
 
 .gridHeader {
@@ -405,6 +405,17 @@ figcaption {
 
 .addnewrest TEXTAREA[type=text], select {
   width: 200%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.addnewcomment TEXTAREA[type=text], select {
+  width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
