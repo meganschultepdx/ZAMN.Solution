@@ -26,7 +26,7 @@ namespace ZAMN.Controllers
     [HttpPost("/capekiwanda")]
     public ActionResult Create(string userName, string userComment, DateTime timePost)
     {
-      CapeKiwanda newPost = new CapeKiwanda(userName, userComment, timePost);
+      CapeKiwanda newPost = new CapeKiwanda(userName, userComment);
       newPost.Save();
       List<CapeKiwanda> allPosts = CapeKiwanda.GetAll();
       return View("Index", allPosts);
