@@ -26,7 +26,7 @@ namespace ZAMN.Controllers
     [HttpPost("/shortsands")]
     public ActionResult Create(string userName, string userComment, DateTime timePost)
     {
-      ShortSands newPost = new ShortSands(userName, userComment);
+      ShortSands newPost = new ShortSands(userName, userComment, timePost);
       newPost.Save();
       List<ShortSands> allPosts = ShortSands.GetAll();
       return View("Index", allPosts);

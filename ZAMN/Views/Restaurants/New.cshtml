@@ -5,17 +5,10 @@
 <div class="gridHeader">
   <div class="header">
     <ul class="menu">
-      <!-- <li>
-        <form class="form-inline" action="/action_page.php">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search">
-          <button class="btn btn-success" type="submit">SEARCH</button>
-        </form>
-      </li> -->
       <li><a href='/'>HOME</a></li>
-      <li><a href='/DIRECTIONS'>DIRECTIONS</a></li>
       <li><a href='/restaurants'>FOOD</a></li>
       <li><a href='/hikes'>HIKES</a></li>
-      <!-- <li><a href='/login'>LOGIN</a></li> -->
+      <li><a href='/login/new'>LOGIN</a></li>
     </ul>
   </div>
 </div>
@@ -28,7 +21,7 @@
       <div class="col-md-12 panel-body">
         <form action="/restaurants" method="post">
           <div class="form-group">
-            <label for="name">Name</label>
+            <label for="name">Restaurant name</label>
             <input id="name" name="name" type="text">
           </div>
           <div class="form-group">
@@ -42,7 +35,6 @@
           </div>
           <div class="form-group">
             <label for="description">Tell us about your experience</label>
-            <!-- <input id="description" name="description" ROWS="2" COLS="20" type="text"> -->
             <TEXTAREA name="description" ROWS="2" COLS="20" type="text"></TEXTAREA>
           </div>
           <button class="btn btn-success" type="submit">Add</button>
@@ -51,8 +43,5 @@
     </div>
     <br>
     <p><a href="/restaurants">Back to restaurants</a></p>
-  </div>
-  <div class="footer">
-    <p>© 2019 ZAMN. All rights reserved.</p>
   </div>
 </div>

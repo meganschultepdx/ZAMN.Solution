@@ -14,7 +14,6 @@ namespace ZAMN.Models
 
     public Hike (string hikeName, string hikeAddress, string hikeType, string hikeDescription)
     {
-      // _hikeId = hikeId;
       _hikeName = hikeName;
       _hikeAddress = hikeAddress;
       _hikeType = hikeType;
@@ -47,9 +46,6 @@ namespace ZAMN.Models
       MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
       while(rdr.Read())
       {
-        // int clientId = rdr.GetInt32(0);
-        // string clientName = rdr.GetString(1);
-        // string clientPhone = rdr.GetString(2);
 
         Hike newHike = new Hike(
           rdr.GetString(1),
@@ -146,88 +142,5 @@ namespace ZAMN.Models
       }
       return newHike;
     }
-
-    // public void AddUser(User newUser)
-    // {
-    //   MySqlConnection conn = DB.Connection();
-    //   conn.Open();
-    //   var cmd = conn.CreateCommand() as MySqlCommand;
-    //
-    //   cmd.CommandText = @"INSERT INTO services (users_id, hikes_id) VALUES (@UserId, @HikeId);";
-    //   cmd.Parameters.AddWithValue("@UserId", newUser.GetId());
-    //   cmd.Parameters.AddWithValue("@HikeId", _hikeId);
-
-      // MySqlParameter users_id = new MySqlParameter();
-      // users_id.ParameterName = "@UserId";
-      // users_id.Value = newUser._id;
-      // cmd.Parameters.Add(users_id);
-      // cmd.Parameters.AddWithValue("@UserId", _hikeName);
-      //
-      // MySqlParameter hikes_id = new MySqlParameter();
-      // hikes_id.ParameterName = "@HikeId";
-      // hikes_id.Value = _hikeId;
-      // cmd.Parameters.Add(hikes_id);
-
-    //   cmd.ExecuteNonQuery();
-    //   conn.Close();
-    //   if (conn != null)
-    //   {
-    //     conn.Dispose();
-    //   }
-    // }
-
-    // public List<User> GetUsers()
-    // {
-    //   MySqlConnection conn = DB.Connection();
-    //   conn.Open();
-    //   MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
-    //
-    //   cmd.CommandText = @"SELECT users.* FROM hikes
-    //       JOIN services ON (hikes.id = services.hikes_id)
-    //       JOIN users ON (services.users_id = users.id)
-    //       WHERE hikes.id = @HikeId;";
-    //
-    //   MySqlParameter hikeIdParameter = new MySqlParameter();
-    //   hikeIdParameter.ParameterName = "@HikeId";
-    //   hikeIdParameter.Value = _hikeId;
-    //   cmd.Parameters.Add(hikeIdParameter);
-    //
-    //   MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
-    //
-    //   List<User> users = new List<User>{};
-    //   while(rdr.Read())
-    //   {
-    //     // int userId = rdr.GetInt32(0);
-    //     string userName = rdr.GetString(1);
-    //     string bio = rdr.GetString(2);
-    //     // string userPrice = rdr.GetString(2);
-    //     User newUser = new User(userName, bio);
-    //     users.Add(newUser);
-    //   }
-    //   conn.Close();
-    //   if (conn != null)
-    //   {
-    //     conn.Dispose();
-    //   }
-    //   return users;
-    // }
-
-    // public void Delete()
-    // {
-    //   MySqlConnection conn = DB.Connection();
-    //   conn.Open();
-    //
-    //   var cmd = conn.CreateCommand() as MySqlCommand;
-    //   cmd.CommandText = @"DELETE FROM hikes WHERE id = @HikeId; DELETE FROM services WHERE hikes_id = @HikeId;";
-    //   MySqlParameter hikeIdParameter = new MySqlParameter();
-    //   hikeIdParameter.ParameterName = "@HikeId";
-    //   hikeIdParameter.Value = this._hikeId;
-    //   cmd.Parameters.Add(hikeIdParameter);
-    //   cmd.ExecuteNonQuery();
-    //   if (conn != null)
-    //   {
-    //     conn.Close();
-    //   }
-    // }
   }
 }

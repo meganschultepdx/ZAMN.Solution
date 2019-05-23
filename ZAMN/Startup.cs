@@ -43,6 +43,6 @@ namespace ZAMN
   }
   public static class DBConfiguration
  {
-   public static string ConnectionString = "server=localhost;user id=root;port=3308;database=ZAMN;Convert Zero Datetime=True;";
+   public static string ConnectionString = "server=localhost;user id=root;port=8889;password=root;database=ZAMN;Convert Zero Datetime=True;";
  }
 }

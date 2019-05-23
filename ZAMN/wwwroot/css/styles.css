@@ -8,6 +8,14 @@ h1, h2, h3 {
   font-family: 'Roboto', sans-serif;
 }
 
+#homeTitle {
+  text-align: center;
+  font: 60px/1.5 'Roboto', Verdana, sans-serif;
+  color: #5C6265;
+  letter-spacing: 2px;
+}
+}
+
 h4, h5, p {
   font-family: 'Raleway', sans-serif;
 }
@@ -31,8 +39,7 @@ h3 {
 .menu ul {
   list-style-type: none;
   margin: 0;
-  padding: 0;
-}
+  padding: 0;}
 
 .menu li {
   display: inline-block;
@@ -181,11 +188,6 @@ figure:hover img {
   color: #F6AA1C;
 }
 
-/* figcaption {
-  height: 100%;
-  width: 100%;
-  display: none;
-} */
 
 figcaption {
   text-align: center;
@@ -265,7 +267,7 @@ figcaption {
   display: flex;
   align-items: center;
   height: 250px;
-  width: 2530px;
+  width: 2565px;
   margin-bottom: 20px;
   margin-top: 20px;
   background: white;

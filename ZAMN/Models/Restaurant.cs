@@ -14,7 +14,6 @@ namespace ZAMN.Models
 
     public Restaurant (string restaurantName, string restaurantAddress, string restaurantType, string restaurantDescription)
     {
-      // _restaurantId = restaurantId;
       _restaurantName = restaurantName;
       _restaurantAddress = restaurantAddress;
       _restaurantType = restaurantType;
@@ -47,9 +46,6 @@ namespace ZAMN.Models
       MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
       while(rdr.Read())
       {
-        // int clientId = rdr.GetInt32(0);
-        // string clientName = rdr.GetString(1);
-        // string clientPhone = rdr.GetString(2);
 
         Restaurant newRestaurant = new Restaurant(
           rdr.GetString(1),
