@@ -8,11 +8,13 @@ namespace ZAMN.Models
 
     public int _commentId { get; set; }
     public string _commentDescription { get; set; }
+    public string _commentCreated { get; set; }
 
-    public Comment (string commentDescription)
+    public Comment (string commentDescription, string commentCreated)
     {
       // _commentId = commentId;
       _commentDescription = commentDescription;
+      _commentCreated = commentCreated;
     }
 
     public static List<Comment> GetAll()
@@ -31,7 +33,8 @@ namespace ZAMN.Models
         // string clientPhone = rdr.GetString(2);
 
         Comment newComment = new Comment(
-          rdr.GetString(1)
+          rdr.GetString(1),
+          rdr.GetString(2)
         );
         newComment._commentId = rdr.GetInt32(0);
         allComments.Add(newComment);
@@ -96,14 +99,16 @@ namespace ZAMN.Models
       var rdr = cmd.ExecuteReader() as MySqlDataReader;
       int commentId = 0;
       string commentDescription = "";
+      string commentCreated = "";
 
       while(rdr.Read())
       {
         commentId = rdr.GetInt32(0);
         commentDescription = rdr.GetString(1);
+        commentCreated = rdr.GetString(2);
       }
 
-      Comment newComment = new Comment(commentDescription);
+      Comment newComment = new Comment(commentDescription, commentCreated);
       newComment._commentId = commentId;
 
       conn.Close();

@@ -147,87 +147,58 @@ namespace ZAMN.Models
       return newRestaurant;
     }
 
-    // public void AddUser(User newUser)
-    // {
-    //   MySqlConnection conn = DB.Connection();
-    //   conn.Open();
-    //   var cmd = conn.CreateCommand() as MySqlCommand;
-    //
-    //   cmd.CommandText = @"INSERT INTO services (users_id, restaurants_id) VALUES (@UserId, @RestaurantId);";
-    //   cmd.Parameters.AddWithValue("@UserId", newUser.GetId());
-    //   cmd.Parameters.AddWithValue("@RestaurantId", _restaurantId);
+    public void AddComment(string description)
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
 
-      // MySqlParameter users_id = new MySqlParameter();
-      // users_id.ParameterName = "@UserId";
-      // users_id.Value = newUser._id;
-      // cmd.Parameters.Add(users_id);
-      // cmd.Parameters.AddWithValue("@UserId", _restaurantName);
-      //
-      // MySqlParameter restaurants_id = new MySqlParameter();
-      // restaurants_id.ParameterName = "@RestaurantId";
-      // restaurants_id.Value = _restaurantId;
-      // cmd.Parameters.Add(restaurants_id);
+      cmd.CommandText = @"INSERT INTO comments (description, restaurant_id) VALUES (@description, @RestaurantId);";
 
-    //   cmd.ExecuteNonQuery();
-    //   conn.Close();
-    //   if (conn != null)
-    //   {
-    //     conn.Dispose();
-    //   }
-    // }
+      cmd.Parameters.AddWithValue("@RestaurantId", _restaurantId);
+      cmd.Parameters.AddWithValue("@description", description);
 
-    // public List<User> GetUsers()
-    // {
-    //   MySqlConnection conn = DB.Connection();
-    //   conn.Open();
-    //   MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
-    //
-    //   cmd.CommandText = @"SELECT users.* FROM restaurants
-    //       JOIN services ON (restaurants.id = services.restaurants_id)
-    //       JOIN users ON (services.users_id = users.id)
-    //       WHERE restaurants.id = @RestaurantId;";
-    //
-    //   MySqlParameter restaurantIdParameter = new MySqlParameter();
-    //   restaurantIdParameter.ParameterName = "@RestaurantId";
-    //   restaurantIdParameter.Value = _restaurantId;
-    //   cmd.Parameters.Add(restaurantIdParameter);
-    //
-    //   MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
-    //
-    //   List<User> users = new List<User>{};
-    //   while(rdr.Read())
-    //   {
-    //     // int userId = rdr.GetInt32(0);
-    //     string userName = rdr.GetString(1);
-    //     string bio = rdr.GetString(2);
-    //     // string userPrice = rdr.GetString(2);
-    //     User newUser = new User(userName, bio);
-    //     users.Add(newUser);
-    //   }
-    //   conn.Close();
-    //   if (conn != null)
-    //   {
-    //     conn.Dispose();
-    //   }
-    //   return users;
-    // }
+      cmd.ExecuteNonQuery();
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+    }
 
-    // public void Delete()
-    // {
-    //   MySqlConnection conn = DB.Connection();
-    //   conn.Open();
-    //
-    //   var cmd = conn.CreateCommand() as MySqlCommand;
-    //   cmd.CommandText = @"DELETE FROM restaurants WHERE id = @RestaurantId; DELETE FROM services WHERE restaurants_id = @RestaurantId;";
-    //   MySqlParameter restaurantIdParameter = new MySqlParameter();
-    //   restaurantIdParameter.ParameterName = "@RestaurantId";
-    //   restaurantIdParameter.Value = this._restaurantId;
-    //   cmd.Parameters.Add(restaurantIdParameter);
-    //   cmd.ExecuteNonQuery();
-    //   if (conn != null)
-    //   {
-    //     conn.Close();
-    //   }
-    // }
+    public List<Comment> GetComments()
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+
+      cmd.CommandText = @"
+          SELECT comments.id, comments.description, cast(comments.created_date as char) AS created_date
+          FROM restaurants
+          JOIN comments ON comments.restaurant_id = restaurants.id
+          WHERE restaurants.id = @RestaurantId;";
+
+      cmd.Parameters.AddWithValue("@RestaurantId", _restaurantId);
+
+      MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
+
+      List<Comment> comments = new List<Comment>{};
+      while(rdr.Read())
+      {
+        int commentId = rdr.GetInt32(0);
+        string commentDescription = rdr.GetString(1);
+        string commentCreated = rdr.GetString(2);
+        Comment newComment = new Comment(commentDescription, commentCreated);
+        newComment._commentId = commentId;
+        newComment._commentCreated = commentCreated;
+        comments.Add(newComment);
+      }
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+      return comments;
+    }
   }
 }
