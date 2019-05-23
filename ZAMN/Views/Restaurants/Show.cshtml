@@ -28,22 +28,26 @@
 @if (@Model["restaurantComments"].Count != 0)
 {
   <h4>Comments:</h4>
-  <ol>
     @foreach (var comment in @Model["restaurantComments"])
     {
-      <li>@comment._commentDescription | @comment._commentCreated
-      </li>
+      <p>@comment._commentCreated |@comment._commentDescription
+      </p>
     }
-  </ol>
 }
 
-  <h4>Add a comment to this restaurant:</h4>
-  <div class="addnewcomment">
-    <form action='/restaurants/@Model["selectedRestaurant"]._restaurantId/comments/new' method='post'>
-      <TEXTAREA name="comment" cols="200" value=""></TEXTAREA>
-      <input type="submit" value="Submit">
-    </form>
-    <br>
+  <div class="row">
+    <div class="col-md-12 panel-body">
+      <h4>Add a comment to this restaurant:</h4>
+      <div class="addnewcomment">
+        <form action='/restaurants/@Model["selectedRestaurant"]._restaurantId/comments/new' method='post'>
+          <div class="form-group">
+            <TEXTAREA name="comment" ROWS="2" COLS="20" type="text"></TEXTAREA>
+          </div>
+          <button class="btn btn-success" type="submit">Send</button>
+        </form>
+        <br>
+      </div>
+    </div>
   </div>
 
   <br>

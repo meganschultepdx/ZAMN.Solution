@@ -64,10 +64,21 @@
           @foreach (var restaurant in Model)
           {
             <h3>@restaurant._restaurantName</h3>
-            <button><a href="/restaurants/@restaurant._restaurantId">Add comment and view other comments</a></button>
+            <button><a href="/restaurants/@restaurant._restaurantId">Add comment</a></button>
             <p>@restaurant._restaurantAddress
             || @restaurant._restaurantType</p>
             <p>@restaurant._restaurantDescription</p>
+
+            @if (@restaurant.GetComments().Count != 0)
+            {
+              <h5>Comments:</h5>
+                @foreach (var comment in @restaurant.GetComments())
+                {
+                  <p>@comment._commentCreated | @comment._commentDescription
+                  </p>
+                }
+            }
+
             <hr>
           }
 

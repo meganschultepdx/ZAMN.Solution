@@ -394,7 +394,7 @@ figcaption {
 }
 
 .addnewrest input[type=text], select {
-  width: 200%;
+  width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -404,7 +404,7 @@ figcaption {
 }
 
 .addnewrest TEXTAREA[type=text], select {
-  width: 200%;
+  width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
